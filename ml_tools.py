@@ -6,7 +6,7 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_sc
 
 
 def read_dataset(name, class_column, index_col=None):
-    dataset = pd.read_csv(f'ml-throwdown-datasets/{name}.csv', index_col=index_col)
+    dataset = pd.read_csv(f'datasets/{name}.csv', index_col=index_col)
     classes = dataset[class_column].unique()
     y = dataset.pop(class_column).astype('category').cat.codes
     return dataset, y, classes
